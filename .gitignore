@@ -1,0 +1,4 @@
+*.out
+*.log
+*.edr
+stmv.tpr*
