@@ -55,7 +55,7 @@ Based on <https://github.com/cp2k/cp2k/tree/master/benchmarks>
   molecules in total). An LDA functional is used with a DZVP MOLOPT
   basis set and a 300 Ry cutoff.
 * `h-BN-diag.inp`: Quickstep DFT calculation of hexagonal boron
-  nitride adsorbed on Rh(111) (914 atoms, X electrons). The PBE-D3
+  nitride adsorbed on Rh(111) (914 atoms, 6536 electrons). The PBE-D3
   functional is used with a DZVP MOLOPT basis set and a 500 Ry cutoff.
   Standard diagonalization with Fermi-Dirac smearing (300 K) and the
   ELPA library is applied for SCF.
