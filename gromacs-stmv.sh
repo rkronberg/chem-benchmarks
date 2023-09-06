@@ -3,6 +3,6 @@ SCRIPT="gmx_mpi mdrun"
 
 (set -x
 # .tpr file is huge, download it from Allas
-wget -P benchmarks -O stmv.tpr https://a3s.fi/rasmus/stmv.tpr
+wget -O benchmarks/stmv.tpr https://a3s.fi/rasmus/stmv.tpr
 srun $SCRIPT $ARGS $*
 )
