@@ -5,4 +5,8 @@
 *.restart
 *.ener
 stmv.tpr
-
+mdcrd
+mdinfo
+mdout.GPU
+restrt
+logfile

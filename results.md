@@ -2,20 +2,27 @@
 
 ## GROMACS
 
-| Version | Input           | System | MPI ranks | Threads/rank | GPUs | Perf. (ns/day) | Date       |
-|---------|-----------------|--------|-----------|--------------|------|----------------|------------|
-| 2021.5  | `stmv.tpr`      | Puhti  | 80        | 1            | 0    | 3.627          | 2023-09-05 |
-| 2021.5  | `adh_dodec.tpr` | Puhti  | 40        | 1            | 0    | 46.210         | 2023-09-05 |
-| 2023.2  | `stmv.tpr`      | Puhti  | 80        | 1            | 0    | 3.871          | 2023-09-05 |
-| 2023.2  | `adh_dodec.tpr` | Puhti  | 40        | 1            | 0    | 46.646         | 2023-09-05 |
-| 2022.4  | `adh_dodec.tpr` | Puhti  | 40        | 1            | 0    | 46.385         | 2023-09-06 |
-| 2022.4  | `stmv.tpr`      | Puhti  | 80        | 1            | 0    | 3.685          | 2023-09-06 |
+| Module   | Benchmark         | System | MPI ranks | Threads/rank | GPUs | Performance (ns/day) | Date       |
+|----------|-------------------|--------|-----------|--------------|------|----------------------|------------|
+| `2021.5` | `gromacs-stmv.sh` | Puhti  | 80        | 1            | 0    | 3.627                | 2023-09-05 |
+| `2021.5` | `gromacs-adh.sh`  | Puhti  | 40        | 1            | 0    | 46.210               | 2023-09-05 |
+| `2023.2` | `gromacs-stmv.sh` | Puhti  | 80        | 1            | 0    | 3.871                | 2023-09-05 |
+| `2023.2` | `gromacs-adh.sh`  | Puhti  | 40        | 1            | 0    | 46.646               | 2023-09-05 |
+| `2022.4` | `gromacs-adh.sh`  | Puhti  | 40        | 1            | 0    | 46.385               | 2023-09-06 |
+| `2022.4` | `gromacs-stmv.sh` | Puhti  | 80        | 1            | 0    | 3.685                | 2023-09-06 |
 
 ## CP2K
 
-| Version | Input            | System | MPI ranks | Threads/rank | GPUs | Elapsed time (s) | Date       |
-|---------|------------------|--------|-----------|--------------|------|------------------|------------|
-| 2023.2  | `H2O-qs.inp`     | Puhti  | 40        | 1            | 0    | 486.031          | 2023-09-06 |
-| 2023.2  | `H2O-ls-scf.inp` | Puhti  | 40        | 2            | 0    | 629.236          | 2023-09-06 |
-| 2023.2  | `H2O-hyb.inp`    | Puhti  | 40        | 1            | 0    | 723.141          | 2023-09-06 |
-| 2023.2  | `h-BN-diag.inp`  | Puhti  | 40        | 2            | 0    | 378.897          | 2023-09-06 |
+| Module   | Benchmark        | System | MPI ranks | Threads/rank | GPUs | Elapsed time (s) | Date       |
+|----------|------------------|--------|-----------|--------------|------|------------------|------------|
+| `2023.2` | `cp2k-qs.sh`     | Puhti  | 40        | 1            | 0    | 486.031          | 2023-09-06 |
+| `2023.2` | `cp2k-ls-scf.sh` | Puhti  | 40        | 2            | 0    | 629.236          | 2023-09-06 |
+| `2023.2` | `cp2k-hyb.sh`    | Puhti  | 40        | 1            | 0    | 723.141          | 2023-09-06 |
+| `2023.2` | `cp2k-diag.sh`   | Puhti  | 40        | 2            | 0    | 378.897          | 2023-09-06 |
+
+## Amber
+
+| Module    | Benchmark            | System | MPI ranks | Threads/rank | GPUs | Performance (ns/day) | Date       |
+|-----------|----------------------|--------|-----------|--------------|------|----------------------|------------|
+| `22-cuda` | `amber-cellulose.sh` | Puhti  | 1         | 1            | 1    | 86.53                | 2023-09-08 |
+| `22-cuda` | `amber-cellulose.sh` | Mahti  | 1         | 1            | 1    | 100.00               | 2023-09-08 |
