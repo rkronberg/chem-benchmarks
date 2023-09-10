@@ -15,7 +15,7 @@ per MPI rank as follows:
 ```bash
 module purge
 module load gcc/11.3.0 openmpi/4.1.4 gromacs/2023.2
-sbatch slurm/puhti-cpu40-omp1.sh gromacs-adh.sh
+sbatch slurm/puhti-mpi40-omp1.sh gromacs-adh.sh
 ```
 
 Remember to initialize the required module environment before
