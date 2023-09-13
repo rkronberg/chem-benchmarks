@@ -2,14 +2,16 @@
 
 ## GROMACS
 
-| Module   | Benchmark         | System | MPI ranks | Threads/rank | GPUs | Performance (ns/day) | Date       |
-|----------|-------------------|--------|-----------|--------------|------|----------------------|------------|
-| `2021.5` | `gromacs-stmv.sh` | Puhti  | 80        | 1            | 0    | 3.627                | 2023-09-05 |
-| `2021.5` | `gromacs-adh.sh`  | Puhti  | 40        | 1            | 0    | 46.210               | 2023-09-05 |
-| `2023.2` | `gromacs-stmv.sh` | Puhti  | 80        | 1            | 0    | 3.871                | 2023-09-05 |
-| `2023.2` | `gromacs-adh.sh`  | Puhti  | 40        | 1            | 0    | 46.646               | 2023-09-05 |
-| `2022.4` | `gromacs-adh.sh`  | Puhti  | 40        | 1            | 0    | 46.385               | 2023-09-06 |
-| `2022.4` | `gromacs-stmv.sh` | Puhti  | 80        | 1            | 0    | 3.685                | 2023-09-06 |
+| Module        | Benchmark         | System | MPI ranks | Threads/rank | GPUs | Performance (ns/day) | Date       |
+|---------------|-------------------|--------|-----------|--------------|------|----------------------|------------|
+| `2021.5`      | `gromacs-stmv.sh` | Puhti  | 80        | 1            | 0    | 3.627                | 2023-09-05 |
+| `2021.5`      | `gromacs-adh.sh`  | Puhti  | 40        | 1            | 0    | 46.210               | 2023-09-05 |
+| `2023.2`      | `gromacs-stmv.sh` | Puhti  | 80        | 1            | 0    | 3.871                | 2023-09-05 |
+| `2023.2`      | `gromacs-adh.sh`  | Puhti  | 40        | 1            | 0    | 46.646               | 2023-09-05 |
+| `2022.4`      | `gromacs-adh.sh`  | Puhti  | 40        | 1            | 0    | 46.385               | 2023-09-06 |
+| `2022.4`      | `gromacs-stmv.sh` | Puhti  | 80        | 1            | 0    | 3.685                | 2023-09-06 |
+| `2022.4-cuda` | `gromacs-stmv.sh` | Puhti  | 1         | 10           | 1    | 13.725               | 2023-09-13 |
+
 
 ## CP2K
 

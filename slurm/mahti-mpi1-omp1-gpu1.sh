@@ -3,7 +3,7 @@
 #SBATCH --partition=gputest
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --mem=10G
+#SBATCH --mem=64G
 #SBATCH --time=15
 #SBATCH --gres=gpu:a100:1
 #SBATCH --output=logs/slurm-%x-%j.out
