@@ -11,7 +11,8 @@
 | `2022.4`      | `gromacs-adh.sh`  | Puhti  | 40        | 1            | 0    | 46.385               | 2023-09-06 |
 | `2022.4`      | `gromacs-stmv.sh` | Puhti  | 80        | 1            | 0    | 3.685                | 2023-09-06 |
 | `2022.4-cuda` | `gromacs-stmv.sh` | Puhti  | 1         | 10           | 1    | 13.725               | 2023-09-13 |
-
+| `2022.4-cuda` | `gromacs-stmv.sh` | Mahti  | 1         | 32           | 1    | 20.566               | 2023-09-13 |
+| `2022.4-cuda` | `gromacs-adh.sh`  | Mahti  | 1         | 32           | 1    | 336.037              | 2023-09-13 |
 
 ## CP2K
 
