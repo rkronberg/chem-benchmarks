@@ -1,6 +1,4 @@
-# Results
-
-## GROMACS
+# GROMACS
 
 | Module           | Benchmark         | System | MPI ranks | Threads/rank | GPUs | Performance (ns/day) | Date       |
 |------------------|-------------------|--------|-----------|--------------|------|----------------------|------------|
@@ -16,25 +14,6 @@
 | `2022.4-cuda`    | `gromacs-adh.sh`  | Puhti  | 1         | 10           | 1    | 216.032              | 2023-09-14 |
 | `2023.2`         | `gromacs-stmv.sh` | Mahti  | 128       | 1            | 0    | 9.588                | 2023-09-14 |
 | `2023.2`         | `gromacs-adh.sh`  | Mahti  | 128       | 1            | 0    | 127.931              | 2023-09-14 |
-| `2023.2-hipsycl` | `gromacs-stmv.sh` | LUMI   | 1         | 7            | 1/2  | 15.564               | 2023-09-14 |
+| `2023.2-hipsycl` | `gromacs-stmv.sh` | LUMI   | 1         | 7            | 0.5  | 15.564               | 2023-09-14 |
 | `2023.2-hipsycl` | `gromacs-stmv.sh` | LUMI   | 8         | 7            | 4    | 78.905               | 2023-09-14 |
-
-## CP2K
-
-| Module   | Benchmark        | System | MPI ranks | Threads/rank | GPUs | Elapsed time (s) | Date       |
-|----------|------------------|--------|-----------|--------------|------|------------------|------------|
-| `2023.2` | `cp2k-qs.sh`     | Puhti  | 40        | 1            | 0    | 486.031          | 2023-09-06 |
-| `2023.2` | `cp2k-ls-scf.sh` | Puhti  | 40        | 2            | 0    | 629.236          | 2023-09-06 |
-| `2023.2` | `cp2k-hyb.sh`    | Puhti  | 40        | 1            | 0    | 723.141          | 2023-09-06 |
-| `2023.2` | `cp2k-diag.sh`   | Puhti  | 40        | 2            | 0    | 378.897          | 2023-09-06 |
-| `2023.2` | `cp2k-qs.sh`     | Mahti  | 128       | 1            | 0    | 202.267          | 2023-09-14 |
-| `2023.2` | `cp2k-ls-scf.sh` | Mahti  | 64        | 2            | 0    | 584.792          | 2023-09-14 |
-| `2023.2` | `cp2k-hyb.sh`    | Mahti  | 128       | 1            | 0    | 187.602          | 2023-09-14 |
-| `2023.2` | `cp2k-diag.sh`   | Mahti  | 64        | 2            | 0    | 245.660          | 2023-09-14 |
-
-## Amber
-
-| Module    | Benchmark            | System | MPI ranks | Threads/rank | GPUs | Performance (ns/day) | Date       |
-|-----------|----------------------|--------|-----------|--------------|------|----------------------|------------|
-| `22-cuda` | `amber-cellulose.sh` | Puhti  | 1         | 1            | 1    | 86.53                | 2023-09-08 |
-| `22-cuda` | `amber-cellulose.sh` | Mahti  | 1         | 1            | 1    | 132.87               | 2023-09-08 |
+| `2023.2-hipsycl` | `gromacs-adh.sh`  | LUMI   | 1         | 7            | 1    | 234.541              | 2023-09-15 |
