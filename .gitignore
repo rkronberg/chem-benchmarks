@@ -1,7 +1,6 @@
 *.out
 *.log
 *.edr
-*.wfn
 *.restart
 *.ener
 stmv.tpr
