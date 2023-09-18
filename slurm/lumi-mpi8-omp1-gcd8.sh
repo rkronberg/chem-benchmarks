@@ -17,7 +17,7 @@ cd $SLURM_SUBMIT_DIR
 cat << EOF > select_gpu
 #!/bin/bash
 
-export ROCR_VISIBLE_DEVICES=\$SLURM_LOCALID
+export ROCR_VISIBLE_DEVICES=\$((SLURM_LOCALID%8))
 exec \$*
 EOF
 
