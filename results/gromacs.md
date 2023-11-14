@@ -17,3 +17,5 @@
 | `2023.2-hipsycl` | `gromacs-stmv.sh` | LUMI   | 1         | 7            | 0.5  | 15.564               | 2023-09-14 |
 | `2023.2-hipsycl` | `gromacs-stmv.sh` | LUMI   | 8         | 7            | 4    | 78.905               | 2023-09-14 |
 | `2023.2-hipsycl` | `gromacs-adh.sh`  | LUMI   | 1         | 7            | 1    | 234.541              | 2023-09-15 |
+| `2023.3`         | `gromacs-adh.sh`  | Puhti  | 40        | 1            | 0    | 48.042               | 2023-11-14 |
+| `2023.3`         | `gromacs-stmv.sh` | Mahti  | 128       | 1            | 0    | 9.475                | 2023-11-14 |
