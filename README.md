@@ -59,10 +59,6 @@ Based on <https://github.com/cp2k/cp2k/tree/master/benchmarks>
   functional is used with a DZVP MOLOPT basis set and a 500 Ry cut-off.
   Standard diagonalization with Fermi-Dirac smearing (300 K) and the
   ELPA library is applied for SCF.
-* `cp2k-rpa.sh`: Sparse matrix-based low-scaling RI-RPA calculation of
-  32 water molecules (96 atoms, 256 electrons) in a 9.9 cubic angstrom
-  cell. Benchmark is restarted from a PBE wavefunction and relies on
-  TZ basis sets.
 
 ### Amber
 

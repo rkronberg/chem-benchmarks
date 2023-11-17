@@ -1,4 +1,4 @@
-ARGS="-i benchmarks/h-BN-diag.inp"
+ARGS="-i benchmarks/hBN-diag.inp"
 SCRIPT="cp2k.psmp"
 
 if [[ $HOSTNAME == "nid"* ]]; then
