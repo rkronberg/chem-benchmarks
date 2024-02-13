@@ -32,11 +32,12 @@
         ALPHA 0.2
         BETA 1.5
         NBROYDEN 8
-      &END
+      &END MIXING
       &PRINT
         &RESTART OFF
-        &END
-      &END
+        &END RESTART
+      &END PRINT
+      IGNORE_CONVERGENCE_FAILURE .TRUE.
     &END SCF
     &XC
       &XC_FUNCTIONAL PBE
@@ -44,7 +45,7 @@
       &XC_GRID
         XC_SMOOTH_RHO NN50
         XC_DERIV NN50_SMOOTH
-      &END
+      &END XC_GRID
       &VDW_POTENTIAL
         POTENTIAL_TYPE PAIR_POTENTIAL
         &PAIR_POTENTIAL
@@ -55,7 +56,7 @@
           REFERENCE_FUNCTIONAL PBE
           R_CUTOFF [angstrom] 16.0
           EPS_CN 1.0E-6
-        &END
+        &END PAIR_POTENTIAL
       &END VDW_POTENTIAL
     &END XC
   &END DFT
@@ -988,11 +989,11 @@
     &KIND B
       BASIS_SET DZVP-MOLOPT-SR-GTH
       POTENTIAL GTH-PBE-q3
-    &END
+    &END KIND
     &KIND N
       BASIS_SET DZVP-MOLOPT-SR-GTH
       POTENTIAL GTH-PBE-q5
-    &END
+    &END KIND
   &END SUBSYS
 &END FORCE_EVAL
 &GLOBAL
@@ -1004,4 +1005,3 @@
     ELPA_FORCE_REDISTRIBUTE FALSE
   &END FM_DIAG_SETTINGS
 &END GLOBAL
-

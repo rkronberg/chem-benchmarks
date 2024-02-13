@@ -18,49 +18,50 @@
       METHOD CHARGE_CONSTRAINED_PROJECTION
       EXCH_SCALING_MODEL MERLOT
       EXCH_CORRECTION_FUNC OPTX
-    &END
+    &END AUXILIARY_DENSITY_MATRIX_METHOD
     &SCF
       SCF_GUESS ATOMIC
       EPS_SCF 1.E-6
       MAX_SCF 10
       &OUTER_SCF
-       EPS_SCF 1.E-6
-       MAX_SCF 10
-      &END
+        EPS_SCF 1.E-6
+        MAX_SCF 10
+      &END OUTER_SCF
       &OT ON
         MINIMIZER DIIS
         PRECONDITIONER FULL_SINGLE_INVERSE
       &END OT
       &PRINT
         &RESTART OFF
-        &END
-      &END
+        &END RESTART
+      &END PRINT
+      IGNORE_CONVERGENCE_FAILURE .TRUE.
     &END SCF
     &XC
       &XC_FUNCTIONAL PBE
-       &PBE
-         SCALE_X 0.75
-         SCALE_C 1.0
-       &END PBE
+        &PBE
+          SCALE_X 0.75
+          SCALE_C 1.0
+        &END PBE
       &END XC_FUNCTIONAL
       &HF
         &HF_INFO ON
-        &END
+        &END HF_INFO
         &SCREENING
           EPS_SCHWARZ 1.0E-08
           SCREEN_ON_INITIAL_P .TRUE.
-        &END
+        &END SCREENING
         &MEMORY
           MAX_MEMORY  500
           EPS_STORAGE_SCALING 0.01
-        &END
+        &END MEMORY
         &INTERACTION_POTENTIAL
           POTENTIAL_TYPE TRUNCATED
           CUTOFF_RADIUS 5.0
           T_C_G_DATA t_c_g.dat
-        &END
+        &END INTERACTION_POTENTIAL
         FRACTION 0.25
-      &END
+      &END HF
     &END XC
   &END DFT
   &SUBSYS
@@ -279,7 +280,7 @@
   PRINT_LEVEL LOW
   &TIMINGS
     THRESHOLD 0.001
-  &END
+  &END TIMINGS
 &END GLOBAL
 &MOTION
   &MD
