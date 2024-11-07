@@ -24,6 +24,7 @@
 | `2023.3-gpu`  | `gromacs-adh.sh`  | LUMI   | 1         | 7            | 0.5  | 232.214              | 2023-11-17 |
 | `2024.3`      | `gromacs-stmv.sh` | Mahti  | 128       | 1            | 0    | 9.744                | 2024-09-10 |
 | `2024.3`      | `gromacs-stmv.sh` | Puhti  | 80        | 1            | 0    | 6.927                | 2024-09-10 |
-| `2024.3-gpu`  | `gromacs-stmv.sh` | LUMI   | 8         | 7            | 4    | 101.862              | 2023-09-17 |
+| `2024.3-gpu`  | `gromacs-stmv.sh` | LUMI   | 8         | 7            | 4    | 105.015              | 2024-09-17 |
 | `2024.4`      | `gromacs-stmv.sh` | Mahti  | 128       | 1            | 0    | 9.843                | 2024-11-07 |
 | `2024.4`      | `gromacs-stmv.sh` | Puhti  | 80        | 1            | 0    | 6.927                | 2024-11-07 |
+| `2024.4-gpu`  | `gromacs-stmv.sh` | LUMI   | 8         | 7            | 4    | 105.624              | 2024-11-07 |
