@@ -7,3 +7,5 @@
 | `22-gpu`  | `amber-cellulose.sh` | LUMI   | 1         | 1            | 0.5  | 109.09               | 2023-09-15 |
 | `22-gpu`  | `amber-cellulose.sh` | LUMI   | 8         | 1            | 4    | 174.97               | 2023-09-15 |
 | `24-cuda` | `amber-cellulose.sh` | Mahti  | 1         | 1            | 1    | 134.09               | 2024-10-04 |
+| `24-gpu`  | `amber-cellulose.sh` | LUMI   | 1         | 1            | 0.5  | 107.50               | 2026-02-04 |
+| `24-gpu`  | `amber-cellulose.sh` | LUMI   | 8         | 1            | 4    | 171.54               | 2026-02-04 |
