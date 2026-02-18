@@ -1,4 +1,4 @@
-ARGS="-i benchmarks/H2O-ls-scf.inp"
+ARGS="-i $1"
 SCRIPT="cp2k.psmp"
 
 if [[ $HOSTNAME == "nid"* ]]; then
@@ -7,5 +7,5 @@ if [[ $HOSTNAME == "nid"* ]]; then
 fi
 
 (set -x
-srun $SRUN_OPTS $SCRIPT $ARGS $*
+srun $SRUN_OPTS $SCRIPT $ARGS
 )

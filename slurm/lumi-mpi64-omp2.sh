@@ -1,7 +1,6 @@
 #!/bin/bash
 #SBATCH --account=project_462000007
-#SBATCH --partition=debug
-#SBATCH --exclusive
+#SBATCH --partition=standard
 #SBATCH --nodes=1
 #SBATCH --ntasks=64
 #SBATCH --cpus-per-task=2

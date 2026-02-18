@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --account=project_462000007
 #SBATCH --partition=standard
-#SBATCH --nodes=1
+#SBATCH --nodes=4
 #SBATCH --ntasks-per-node=128
 #SBATCH --cpus-per-task=1
 #SBATCH --time=30

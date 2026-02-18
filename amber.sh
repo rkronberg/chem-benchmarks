@@ -11,5 +11,5 @@ if [[ $SLURM_GPUS_ON_NODE -gt 1 ]]; then
 fi
 
 (set -x
-srun $SRUN_OPTS $SCRIPT $ARGS $*
+srun $SRUN_OPTS $SCRIPT $ARGS
 )
