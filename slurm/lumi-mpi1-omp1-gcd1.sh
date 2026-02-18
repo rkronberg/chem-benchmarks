@@ -8,7 +8,6 @@
 #SBATCH --output=logs/slurm-%x-%j.out
 
 export OMP_NUM_THREADS=1
-export MPICH_GPU_SUPPORT_ENABLED=1
 
 cd $SLURM_SUBMIT_DIR
 
