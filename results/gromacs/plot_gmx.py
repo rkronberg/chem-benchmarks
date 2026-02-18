@@ -2,6 +2,7 @@
 
 import sys
 from pathlib import Path
+from datetime import datetime
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -69,7 +70,10 @@ def main():
     ax.legend()
 
     plt.tight_layout()
-    plt.savefig("img/%s.svg" % datasets[0][0])
+
+    outfile = "img/out-%s.svg" % datetime.now().strftime("%Y%m%d%H%M%S")
+    print("Saving %s" % outfile)
+    plt.savefig(outfile)
 
 
 if __name__ == "__main__":
