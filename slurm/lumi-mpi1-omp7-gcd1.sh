@@ -12,23 +12,4 @@ export MPICH_GPU_SUPPORT_ENABLED=1
 
 cd $SLURM_SUBMIT_DIR
 
-WRAPPER="select_gpu_$SLURM_JOBID"
-
-cat << EOF > $WRAPPER
-#!/bin/bash
-
-export ROCR_VISIBLE_DEVICES=\$((SLURM_LOCALID%SLURM_GPUS_PER_NODE))
-exec \$*
-EOF
-
-chmod +x ./$WRAPPER
-
-CPU_BIND="mask_cpu:fe000000000000,fe00000000000000"
-CPU_BIND="${CPU_BIND},fe0000,fe000000"
-CPU_BIND="${CPU_BIND},fe,fe00"
-CPU_BIND="${CPU_BIND},fe00000000,fe0000000000"
-
-SRUN_OPTS="--cpu-bind=$CPU_BIND ./$WRAPPER"
-
-source slurm/common.sh
-rm ./$WRAPPER
+source slurm/common-lumi-gpu.sh
