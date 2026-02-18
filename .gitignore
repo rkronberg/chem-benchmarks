@@ -3,7 +3,6 @@
 *.edr
 *.restart
 *.ener
-stmv.tpr
 mdcrd
 mdinfo
 mdout.GPU
