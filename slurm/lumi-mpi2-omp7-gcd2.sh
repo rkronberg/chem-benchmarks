@@ -1,9 +1,9 @@
 #!/bin/bash
 #SBATCH --account=project_462000007
 #SBATCH --partition=standard-g
-#SBATCH --nodes=8
-#SBATCH --ntasks-per-node=8
-#SBATCH --gpus-per-node=8
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=2
+#SBATCH --gpus-per-node=2
 #SBATCH --time=15
 #SBATCH --output=logs/slurm-%x-%j.out
 
