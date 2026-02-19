@@ -10,6 +10,8 @@
 
 ## 2026.0-STMV-LUMI-GPU-SYCL
 
+<details>
+
 | MPI ranks | Threads/rank | GCDs | Performance (ns/day) |
 |-----------|--------------|------|----------------------|
 | 1         | 7            | 1    | 18.957               |
@@ -19,7 +21,11 @@
 
 ![](img/2026.0-stmv-lumi-gpu-sycl.svg)
 
+</details>
+
 ## 2026.0-STMV-LUMI-CPU
+
+<details>
 
 | MPI ranks | Threads/rank | GCDs | Performance (ns/day) |
 |-----------|--------------|------|----------------------|
@@ -30,7 +36,11 @@
 
 ![](img/2026.0-stmv-lumi-cpu.svg)
 
+</details>
+
 ## 2025.4-benchPEP-h-LUMI-GPU-SYCL-HeFFTe
+
+<details>
 
 | MPI ranks | Threads/rank | GCDs | Performance (ns/day) |
 |-----------|--------------|------|----------------------|
@@ -40,3 +50,5 @@
 | 1024      | 1            | 0    | 67.231               |
 
 ![](img/2025.4-benchpep-h-lumi-gpu-sycl-heffte.svg)
+
+</details>
