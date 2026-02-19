@@ -12,7 +12,7 @@ fi
 if [[ $SLURM_GPUS_PER_NODE -gt 1 ]]; then
     ARGS="$ARGS -nstlist 300"
     if $SCRIPT -version | grep -Eiq "cufftmp|heffte"; then
-        ARGS="$ARGS -npme $SLURM_NNODES"
+        ARGS="$ARGS -npme $((2*SLURM_NNODES))"
         export GMX_GPU_PME_DECOMPOSITION=1
         export GMX_PMEONEDD=1
     else
