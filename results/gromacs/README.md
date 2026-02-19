@@ -1,6 +1,6 @@
 # GROMACS
 
-| GROMACS | Benchmark  | System | GPU backend | GPU platform | AdaptiveCpp | GPU FFT lib   | Multi-GPU FFT lib | Compiler     | Date       | Results                            |
+| Version | Benchmark  | System | GPU backend | GPU platform | AdaptiveCpp | GPU FFT lib   | Multi-GPU FFT lib | Compiler     | Date       | Results                            |
 |---------|------------|--------|-------------|--------------|-------------|---------------|-------------------|--------------|------------|------------------------------------|
 | 2026.0  | STMV       | LUMI   | SYCL        | ROCm 6.3.4   | 24.02.0     | VkFFT 1.3.1   | n/a               | Clang 18.0.0 | 2026-02-18 | [Link](#20260-stmv-lumi-gpu-sycl)
 | 2026.0  | STMV       | LUMI   | n/a         | n/a          | n/a         | n/a           | n/a               | GNU 14.3.0   | 2026-02-18 | [Link](#20260-stmv-lumi-cpu)
