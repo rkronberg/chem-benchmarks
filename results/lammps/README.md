@@ -17,7 +17,7 @@
 | 8         | 7            | 8    | 1.714                      |
 | 16        | 7            | 16   | 3.214                      |
 
-![](img/20250722-lj-lumi-gpu-kokkos.svg)
+![](../img/lmp-20250722-lj-lumi-gpu-kokkos.svg)
 
 </details>
 
@@ -33,6 +33,6 @@
 | 1024      | 1            | 0    | 1.922                      |
 | 2048      | 1            | 0    | 3.747                      |
 
-![](img/20250722-lj-lumi-cpu.svg)
+![](../img/lmp-20250722-lj-lumi-cpu.svg)
 
 </details>

@@ -6,7 +6,7 @@
 | 2026.0  | STMV       | LUMI   | n/a         | n/a          | n/a         | n/a           | n/a               | GNU 14.3.0   | 2026-02-18 | [Link](#20260-stmv-lumi-cpu)
 | 2025.4  | benchPEP-h | LUMI   | SYCL        | ROCm 6.3.4   | 24.02.0     | rocFFT 1.0.31 | HeFFTe 2.4.1      | Clang 18.0.0 | 2026-02-19 | [Link](#20254-benchpep-h-lumi-gpu-sycl-heffte)
 
-![](img/2026.0-stmv-lumi-cpu-vs-gpu-sycl.svg)
+![](../img/gmx-2026.0-stmv-lumi-cpu-vs-gpu-sycl.svg)
 
 ## 2026.0-STMV-LUMI-GPU-SYCL
 
@@ -19,7 +19,7 @@
 | 8         | 4            | 4    | 70.085               |
 | 8         | 7            | 8    | 110.446              |
 
-![](img/2026.0-stmv-lumi-gpu-sycl.svg)
+![](../img/gmx-2026.0-stmv-lumi-gpu-sycl.svg)
 
 </details>
 
@@ -34,7 +34,7 @@
 | 512       | 1            | 0    | 36.942               |
 | 1024      | 1            | 0    | 67.231               |
 
-![](img/2026.0-stmv-lumi-cpu.svg)
+![](../img/gmx-2026.0-stmv-lumi-cpu.svg)
 
 </details>
 
@@ -49,6 +49,6 @@
 | 512       | 1            | 0    | 36.942               |
 | 1024      | 1            | 0    | 67.231               |
 
-![](img/2025.4-benchpep-h-lumi-gpu-sycl-heffte.svg)
+![](../img/gmx-2025.4-benchpep-h-lumi-gpu-sycl-heffte.svg)
 
 </details>
