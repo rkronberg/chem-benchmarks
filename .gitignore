@@ -4,6 +4,7 @@
 *.edr
 *.restart
 *.ener
+*core*
 mdcrd
 mdinfo
 mdout.GPU
