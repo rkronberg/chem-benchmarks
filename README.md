@@ -1,7 +1,7 @@
 # Chemistry benchmarks
 
-Benchmark input files and batch scripts for selected chemistry
-software on CSC's supercomputers (Puhti, Mahti, Roihu, LUMI).
+Input files and batch scripts for benchmarking strong scalability of selected
+chemistry software on CSC's supercomputers (Puhti, Mahti, Roihu, LUMI).
 
 > Setup inspired by <https://github.com/mvsjober/ml-benchmarks>.
 
@@ -35,8 +35,8 @@ sbatch slurm/puhti-mpi40-omp1.sh gromacs.sh benchmarks/adh.tpr
 |        | GPU       | 2978  | AMD EPYC Trento 7A53 | 1 x 64 cores   | AMD MI250X  | 8[^1]         |
 
 [^1]: Strictly speaking, each LUMI GPU node has 4 GPUs. However, each MI250X
-GPU is composed of two graphics compute dies (GCDs), which from a software
-perspective act as separate GPU devices.
+GPU is composed of two graphics compute dies (GCDs), which from a software (and
+Slurm) perspective act as separate GPU devices.
 
 ## Available benchmarks
 
@@ -89,7 +89,9 @@ From <https://ambermd.org/GPUPerformance.php>
 
 ### LAMMPS
 
-TBA
+* `in.lj`: Atomic fluid, Lennard-Jones potential with 2.5 sigma cutoff (55
+  neighbors per atom), NVE integration. System size is scaled by a factor of 4
+  along each spatial coordinate, resulting in a system of 2048000 atoms.
 
 ### NAMD
 
