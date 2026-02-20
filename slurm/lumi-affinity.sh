@@ -15,17 +15,3 @@ CPU_BIND="${CPU_BIND},fe,fe00"
 CPU_BIND="${CPU_BIND},fe00000000,fe0000000000"
 
 SRUN_OPTS="--cpu-bind=$CPU_BIND ./$SELECT_GPU"
-
-export MPICH_GPU_SUPPORT_ENABLED=1
-
-module list
-
-SCRIPT=$1
-shift
-source $SCRIPT $*
-
-rm ./$SELECT_GPU
-
-(set -x
-date
-)

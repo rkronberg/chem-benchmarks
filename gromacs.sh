@@ -6,6 +6,7 @@ if [[ $SLURM_GPUS_PER_NODE -gt 0 ]]; then
     if [[ $HOSTNAME == "nid"* ]]; then
         export GMX_ENABLE_DIRECT_GPU_COMM=1
         export GMX_FORCE_GPU_AWARE_MPI=1
+        source slurm/lumi-affinity.sh
     fi
 fi
 
