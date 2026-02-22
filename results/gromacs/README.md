@@ -1,54 +1,21 @@
 # GROMACS
 
-| Version | Benchmark  | System | GPU backend | GPU platform | AdaptiveCpp | GPU FFT lib   | Multi-GPU FFT lib | Compiler     | Date       | Results                            |
-|---------|------------|--------|-------------|--------------|-------------|---------------|-------------------|--------------|------------|------------------------------------|
-| 2026.0  | STMV       | LUMI   | SYCL        | ROCm 6.3.4   | 24.02.0     | VkFFT 1.3.1   | n/a               | Clang 18.0.0 | 2026-02-18 | [Link](#20260-stmv-lumi-gpu-sycl)
-| 2026.0  | STMV       | LUMI   | n/a         | n/a          | n/a         | n/a           | n/a               | GNU 14.3.0   | 2026-02-18 | [Link](#20260-stmv-lumi-cpu)
-| 2025.4  | benchPEP-h | LUMI   | SYCL        | ROCm 6.3.4   | 24.02.0     | rocFFT 1.0.31 | HeFFTe 2.4.1      | Clang 18.0.0 | 2026-02-19 | [Link](#20254-benchpep-h-lumi-gpu-sycl-heffte)
+| Version | Benchmark  | System | GPU backend                      | GPU FFT libs                 | MPI ranks | Threads/rank | GPUs | Performance (ns/day) | Plot      | Date       |
+|---------|------------|--------|----------------------------------|------------------------------|-----------|--------------|------|----------------------|-----------|------------|
+| 2026.0  | STMV       | LUMI   | SYCL (ROCm 6.3.4 + ACpp 24.02.0) | VkFFT 1.3.1                  | 1         | 7            | 1    | 18.957               | [View][1] | 2026-02-18 |
+|         |            |        |                                  |                              | 3         | 7            | 2    | 35.399               |           |            |
+|         |            |        |                                  |                              | 8         | 4            | 4    | 70.085               |           |            |
+|         |            |        |                                  |                              | 8         | 7            | 8    | 110.446              |           |            |
+| 2026.0  | STMV       | LUMI   | None                             | None                         | 128       | 1            | 0    | 10.175               | [View][2] | 2026-02-18 |
+|         |            |        |                                  |                              | 256       | 1            | 0    | 21.201               |           |            |
+|         |            |        |                                  |                              | 512       | 1            | 0    | 36.942               |           |            |
+|         |            |        |                                  |                              | 1024      | 1            | 0    | 67.231               |           |            |
+| 2025.4  | benchPEP-h | LUMI   | SYCL (ROCm 6.3.4 + ACpp 24.02.0) | rocFFT 1.0.31 + HeFFTe 2.4.1 | 8         | 7            | 8    | 7.904                | [View][3] | 2026-02-19 |
+|         |            |        |                                  |                              | 16        | 7            | 16   | 16.656               |           |            |
+|         |            |        |                                  |                              | 32        | 7            | 32   | 26.219               |           |            |
+|         |            |        |                                  |                              | 64        | 7            | 64   | 34.430               |           |            |
+|         |            |        |                                  |                              | 128       | 7            | 128  | 35.042               |           |            |
 
-![](img/2026.0-stmv-lumi-cpu-vs-gpu-sycl.svg)
-
-## 2026.0-STMV-LUMI-GPU-SYCL
-
-<details>
-
-| MPI ranks | Threads/rank | GCDs | Performance (ns/day) |
-|-----------|--------------|------|----------------------|
-| 1         | 7            | 1    | 18.957               |
-| 3         | 7            | 2    | 35.399               |
-| 8         | 4            | 4    | 70.085               |
-| 8         | 7            | 8    | 110.446              |
-
-![](img/2026.0-stmv-lumi-gpu-sycl.svg)
-
-</details>
-
-## 2026.0-STMV-LUMI-CPU
-
-<details>
-
-| MPI ranks | Threads/rank | GCDs | Performance (ns/day) |
-|-----------|--------------|------|----------------------|
-| 128       | 1            | 0    | 10.175               |
-| 256       | 1            | 0    | 21.201               |
-| 512       | 1            | 0    | 36.942               |
-| 1024      | 1            | 0    | 67.231               |
-
-![](img/2026.0-stmv-lumi-cpu.svg)
-
-</details>
-
-## 2025.4-benchPEP-h-LUMI-GPU-SYCL-HeFFTe
-
-<details>
-
-| MPI ranks | Threads/rank | GCDs | Performance (ns/day) |
-|-----------|--------------|------|----------------------|
-| 128       | 1            | 0    | 10.175               |
-| 256       | 1            | 0    | 21.201               |
-| 512       | 1            | 0    | 36.942               |
-| 1024      | 1            | 0    | 67.231               |
-
-![](img/2025.4-benchpep-h-lumi-gpu-sycl-heffte.svg)
-
-</details>
+[1]: ../img/gmx-2026.0-stmv-lumi-cpu-vs-gpu-sycl.svg
+[2]: ../img/gmx-2026.0-stmv-lumi-gpu-sycl.svg
+[3]: ../img/gmx-2025.4-benchpep-h-lumi-gpu-sycl-heffte.svg
