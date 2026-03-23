@@ -13,7 +13,7 @@ if [[ $SLURM_GPUS_PER_NODE -gt 1 ]]; then
     SCRIPT="$SCRIPT.MPI"
 fi
 
-ARGS="-O -i $1.mdin.GPU \
+ARGS="-O -i $1.mdin \
       -p $1.prmtop \
       -c $1.inpcrd \
       -o logs/mdout-$SLURM_JOBID \
