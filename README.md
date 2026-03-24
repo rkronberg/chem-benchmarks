@@ -24,15 +24,15 @@ sbatch slurm/puhti-mpi40-omp1.sh gromacs.sh benchmarks/adh.tpr
 ## Systems overview
 
 | System | Partition | Nodes | CPU compute          | Cores per node | GPU compute | GPUs per node |
-|--------|-----------|-------|----------------------|----------------|-------------|---------------|
-| Puhti  | CPU       | 682   | Intel Xeon Gold 6230 | 2 x 20 cores   | n/a         | n/a           |
-|        | GPU       | 80    | Intel Xeon Gold 6230 | 2 x 20 cores   | Nvidia V100 | 4             |
-| Mahti  | CPU       | 1404  | AMD EPYC Rome 7H12   | 2 x 64 cores   | n/a         | n/a           |
-|        | GPU       | 24    | AMD EPYC Rome 7H12   | 2 x 64 cores   | Nvidia A100 | 4             |
-| Roihu  | CPU       | 486   | AMD EPYC Turin 9965  | 2 x 192 cores  | n/a         | n/a           |
-|        | GPU       | 132   | Nvidia Grace         | 4 x 72 cores   | Nvidia H100 | 4             |
-| LUMI   | CPU       | 2048  | AMD EPYC Milan 7763  | 2 x 64 cores   | n/a         | n/a           |
-|        | GPU       | 2978  | AMD EPYC Trento 7A53 | 1 x 64 cores   | AMD MI250X  | 8[^1]         |
+|:------:|:---------:|:-----:|:--------------------:|:--------------:|:-----------:|:-------------:|
+| Puhti  | CPU       | 682   | Intel Xeon Gold 6230 | 2 x 20         | -           | -             |
+|        | GPU       | 80    | Intel Xeon Gold 6230 | 2 x 20         | Nvidia V100 | 4             |
+| Mahti  | CPU       | 1404  | AMD EPYC Rome 7H12   | 2 x 64         | -           | -             |
+|        | GPU       | 24    | AMD EPYC Rome 7H12   | 2 x 64         | Nvidia A100 | 4             |
+| Roihu  | CPU       | 486   | AMD EPYC Turin 9965  | 2 x 192        | -           | -             |
+|        | GPU       | 132   | Nvidia Grace         | 4 x 72         | Nvidia H100 | 4             |
+| LUMI   | CPU       | 2048  | AMD EPYC Milan 7763  | 2 x 64         | -           | -             |
+|        | GPU       | 2978  | AMD EPYC Trento 7A53 | 1 x 64         | AMD MI250X  | 8[^1]         |
 
 [^1]: Strictly speaking, each LUMI GPU node has 4 GPUs. However, each MI250X
 GPU is composed of two graphics compute dies (GCDs), which from a software (and
