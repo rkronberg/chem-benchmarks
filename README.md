@@ -19,7 +19,7 @@ with one thread per MPI rank as follows:
 
 ```bash
 module purge
-module load gcc/11.3.0 openmpi/4.1.4 gromacs/2023.2
+module load gcc/14.2.0 openmpi/5.0.6 gromacs/2025.4
 sbatch slurm/puhti-mpi40-omp1.sh gromacs.sh benchmarks/gromacs/adh.tpr
 ```
 
@@ -27,7 +27,7 @@ On LUMI, also add CSC's module stack to your `MODULEPATH`. For example:
 
 ```bash
 module use /appl/local/csc/modulefiles
-module load gromacs/2026.1
+module load gromacs/2026.1-gpu
 sbatch slurm/lumi-mpi8-omp7-gcd8.sh gromacs.sh benchmarks/gromacs/stmv.tpr
 ```
 
