@@ -1,10 +1,11 @@
 #!/bin/bash
 #SBATCH --account=project_2001659
-#SBATCH --partition=test
+#SBATCH --partition=medium
 #SBATCH --nodes=1
-#SBATCH --ntasks=384
+#SBATCH --ntasks-per-node=384
 #SBATCH --time=15
 #SBATCH --output=logs/slurm-%x-%j.out
+#SBATCH --hint=nomultithread
 
 export OMP_NUM_THREADS=1
 
