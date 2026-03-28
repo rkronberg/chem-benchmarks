@@ -7,6 +7,11 @@ chemistry software on CSC's supercomputers (Puhti, Mahti, Roihu, LUMI).
 
 ## Usage
 
+> [!IMPORTANT]
+> The benchmark inputs are stored with Git LFS. Make sure that you have Git LFS
+> installed in order to access the files.
+> [See instructions here](https://docs.github.com/en/repositories/working-with-files/managing-large-files/installing-git-large-file-storage).
+
 Select a benchmark and Slurm settings of your choice in accordance
 with the system you're running on. The general syntax is:
 
