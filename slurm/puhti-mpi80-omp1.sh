@@ -2,7 +2,7 @@
 #SBATCH --account=project_2001659
 #SBATCH --partition=test
 #SBATCH --nodes=2
-#SBATCH --ntasks=80
+#SBATCH --ntasks-per-node=40
 #SBATCH --mem=0
 #SBATCH --time=15
 #SBATCH --output=logs/slurm-%x-%j.out
