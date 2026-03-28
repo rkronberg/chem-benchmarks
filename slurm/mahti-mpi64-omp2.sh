@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --account=project_2001659
-#SBATCH --partition=test
+#SBATCH --partition=medium
 #SBATCH --nodes=1
 #SBATCH --ntasks=64
 #SBATCH --cpus-per-task=2

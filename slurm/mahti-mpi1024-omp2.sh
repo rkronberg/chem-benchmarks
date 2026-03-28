@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --account=project_2001659
 #SBATCH --partition=medium
-#SBATCH --nodes=2
+#SBATCH --nodes=16
 #SBATCH --ntasks-per-node=64
 #SBATCH --cpus-per-task=2
 #SBATCH --time=0-1
