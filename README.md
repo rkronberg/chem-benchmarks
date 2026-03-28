@@ -1,7 +1,7 @@
 # Chemistry benchmarks
 
-Input files and batch scripts for benchmarking strong scalability of selected
-chemistry software on CSC's supercomputers (Puhti, Mahti, Roihu, LUMI).
+Input files and batch scripts for benchmarking selected chemistry software on
+CSC's supercomputers (Puhti, Mahti, Roihu, LUMI).
 
 > Setup inspired by <https://github.com/mvsjober/ml-benchmarks>.
 
