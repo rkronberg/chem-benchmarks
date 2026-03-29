@@ -9,6 +9,10 @@ if [[ $HOSTNAME == "nid"* ]]; then
     fi
 fi
 
+if [[ $HOSTNAME == "rc"* ]]; then
+    SRUN_OPTS="$SRUN_OPTS --argos=no"
+fi
+
 (set -x
 srun $SRUN_OPTS $SCRIPT $ARGS
 )
