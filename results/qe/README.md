@@ -21,8 +21,14 @@
 |         |           |        |             |                             | 256       | 2            | 0    | 442.92               |           |              |
 |         |           |        |             |                             | 512       | 2            | 0    | 228.59               |           |              |
 |         |           |        |             |                             | 1024      | 2            | 0    | 128.79               |           |              |
+| `7.5`   | GRIR443   | Mahti  | None        | `netlib-scalapack/2.1.0`    | 64        | 2            | 0    | 1736.18              | [View][5] | `2026-03-28` |
+|         |           |        |             |                             | 128       | 2            | 0    | 892.58               |           |              |
+|         |           |        |             |                             | 256       | 2            | 0    | 455.18               |           |              |
+|         |           |        |             |                             | 512       | 2            | 0    | 231.16               |           |              |
+|         |           |        |             |                             | 1024      | 2            | 0    | 133.46               |           |              |
 
 [1]: ../img/qe-7.4.1-grir443-lumi-cpu-elpa.svg
 [2]: ../img/qe-7.4.1-grir443-mahti-cpu-scalapack.svg
 [3]: ../img/qe-7.4.1-grir443-puhti-cpu-mkl.svg
 [4]: ../img/qe-7.5-grir443-lumi-cpu-elpa.svg
+[5]: ../img/qe-7.5-grir443-mahti-cpu-scalapack.svg
