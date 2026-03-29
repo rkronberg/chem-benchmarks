@@ -2,10 +2,11 @@
 #SBATCH --account=project_2001659
 #SBATCH --partition=large
 #SBATCH --nodes=8
-#SBATCH --ntasks-per-node=384
+#SBATCH --ntasks-per-node=40
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=0
 #SBATCH --time=0-1
 #SBATCH --output=logs/slurm-%x-%j.out
-#SBATCH --hint=nomultithread
 
 export OMP_NUM_THREADS=1
 

@@ -4,11 +4,11 @@
 #SBATCH --nodes=2
 #SBATCH --ntasks-per-node=192
 #SBATCH --cpus-per-task=2
-#SBATCH --time=15
+#SBATCH --time=0-1
 #SBATCH --output=logs/slurm-%x-%j.out
 #SBATCH --hint=nomultithread
 
-export OMP_NUM_THREADS=1
+export OMP_NUM_THREADS=2
 
 cd $SLURM_SUBMIT_DIR
 source slurm/common.sh

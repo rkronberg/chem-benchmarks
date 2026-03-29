@@ -2,12 +2,13 @@
 #SBATCH --account=project_2001659
 #SBATCH --partition=large
 #SBATCH --nodes=8
-#SBATCH --ntasks-per-node=384
+#SBATCH --ntasks-per-node=10
+#SBATCH --cpus-per-task=4
+#SBATCH --mem=0
 #SBATCH --time=0-1
 #SBATCH --output=logs/slurm-%x-%j.out
-#SBATCH --hint=nomultithread
 
-export OMP_NUM_THREADS=1
+export OMP_NUM_THREADS=4
 
 cd $SLURM_SUBMIT_DIR
 source slurm/common.sh
