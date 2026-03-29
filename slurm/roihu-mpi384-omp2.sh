@@ -8,7 +8,7 @@
 #SBATCH --output=logs/slurm-%x-%j.out
 #SBATCH --hint=nomultithread
 
-export OMP_NUM_THREADS=1
+export OMP_NUM_THREADS=2
 
 cd $SLURM_SUBMIT_DIR
 source slurm/common.sh
