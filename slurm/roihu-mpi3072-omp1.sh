@@ -3,7 +3,7 @@
 #SBATCH --partition=large
 #SBATCH --nodes=8
 #SBATCH --ntasks-per-node=384
-#SBATCH --time=15
+#SBATCH --time=0-1
 #SBATCH --output=logs/slurm-%x-%j.out
 #SBATCH --hint=nomultithread
 

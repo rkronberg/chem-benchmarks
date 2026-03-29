@@ -4,7 +4,7 @@
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=96
 #SBATCH --cpus-per-task=2
-#SBATCH --time=15
+#SBATCH --time=0-1
 #SBATCH --output=logs/slurm-%x-%j.out
 #SBATCH --hint=nomultithread
 
