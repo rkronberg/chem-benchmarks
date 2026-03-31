@@ -1,4 +1,4 @@
-"GPUs","Performance (Gatom-step/s)"
+"CPU cores","Performance (Gatom-step/s)"
 128,0.218
 256,0.458
 512,0.975

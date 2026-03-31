@@ -2,7 +2,7 @@
 #SBATCH --account=project_2001659
 #SBATCH --partition=test
 #SBATCH --nodes=1
-#SBATCH --ntasks=20
+#SBATCH --ntasks-per-node=20
 #SBATCH --cpus-per-task=2
 #SBATCH --mem=0
 #SBATCH --time=15

@@ -1,4 +1,4 @@
-"GPUs","Performance (ns/day)"
+"CPU cores","Performance (ns/day)"
 128,10.175
 256,21.201
 512,36.942

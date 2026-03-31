@@ -1,11 +1,16 @@
 # Chemistry benchmarks
 
-Input files and batch scripts for benchmarking strong scalability of selected
-chemistry software on CSC's supercomputers (Puhti, Mahti, Roihu, LUMI).
+Input files and batch scripts for benchmarking selected chemistry software on
+CSC's supercomputers (Puhti, Mahti, Roihu, LUMI).
 
 > Setup inspired by <https://github.com/mvsjober/ml-benchmarks>.
 
 ## Usage
+
+> [!IMPORTANT]
+> The benchmark inputs are stored with Git LFS. Make sure that you have Git LFS
+> installed in order to access the files.
+> [See instructions here](https://docs.github.com/en/repositories/working-with-files/managing-large-files/installing-git-large-file-storage).
 
 Select a benchmark and Slurm settings of your choice in accordance
 with the system you're running on. The general syntax is:
@@ -80,25 +85,25 @@ From <https://www.mpinat.mpg.de/grubmueller/bench>.
 
 From <https://github.com/cp2k/cp2k/tree/master/benchmarks>.
 
-* `H2O-qs.inp`  
-  256 water molecules (768 atoms, 2048 electrons) in a 19.7 cubic angstrom
-  cell. BOMD is run for 10 steps using Quickstep DFT and a 280 Ry cutoff at the
-  LDA/TZV2P level of theory. The initial electron density is guessed based on
-  atomic orbitals and the OT method is applied for SCF.
-* `H2O-hyb.inp`  
-  64 water molecules (192 atoms, 512 electrons) in a 12.4 cubic angstrom cell.
-  BOMD is run for 10 steps using Quickstep DFT and a 400 Ry cutoff at the
-  PBE0/TZVP level of theory. The initial electron density is guessed based on
-  atomic orbitals and the OT method is applied for SCF.
-* `H2O-ls-scf.inp`  
-  Quickstep density matrix linear scaling DFT calculation of 6144 atoms in a 39
-  cubic angstrom box (2048 water molecules in total). An LDA functional is used
-  with a DZVP MOLOPT basis set and a 300 Ry cutoff.
-* `hBN-diag.inp`  
+* `H2O-{128,256,512,1024}-qs.inp`  
+  128–1024 water molecules (384–3072 atoms, 1024–8192 electrons). BOMD is run
+  for 10 steps using Quickstep DFT and a 280 Ry cutoff at the PBE/DZVP MOLOPT
+  level of theory. The initial electron density is guessed based on atomic
+  orbitals and the OT method is applied for SCF.
+* `H2O-{64,128}-hyb.inp`  
+  64–128 water molecules (192–384 atoms, 512–1024 electrons). BOMD is run for
+  10 steps using Quickstep DFT and a 400 Ry cutoff at the PBE0/TZVP MOLOPT
+  level of theory. The initial electron density is guessed based on atomic
+  orbitals and the OT method is applied for SCF.
+* `H2O-{256,864,2048,4000,6912,10976,16384}-ls-scf.inp`  
+  Quickstep density matrix linear scaling DFT calculation of 768–49152 atoms
+  (256–16384 water molecules in total). The PBE functional is used with a DZVP
+  MOLOPT basis set and a 300 Ry cutoff.
+* `hBN-Rh-diag.inp`  
   Quickstep DFT calculation of hexagonal boron nitride adsorbed on Rh(111)
-  (914 atoms, 6536 electrons). The PBE-D3 functional is used with a DZVP MOLOPT
-  basis set and a 500 Ry cutoff. Standard diagonalization with Fermi-Dirac
-  smearing (300 K) and the ELPA library is applied for SCF.
+  (914 atoms, 13072 electrons). The PBE-D3 functional is used with a DZVP
+  MOLOPT basis set and a 500 Ry cutoff. Standard diagonalization with
+  Fermi-Dirac smearing (300 K) and the ELPA library is applied for SCF.
 
 ### Amber
 
