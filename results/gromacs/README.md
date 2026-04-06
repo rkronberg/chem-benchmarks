@@ -30,10 +30,9 @@
 |          |                  |        |             |           |              | 8         | 7            | 8    | 110.670              |
 
 [1]: ../img/gmx-2025.4-benchpep-h-lumi-gpu-sycl-heffte.svg
-[2]: ../img/gmx-2026.0-stmv-lumi-cpu-vs-gpu-sycl.svg
-[3]: ../img/gmx-2026.0-stmv-lumi-gpu-sycl.svg
-
-
-49.737
-76.183
-155.411
+[2]: ../img/gmx-2026.0-stmv-lumi-gpu-sycl.svg
+[3]: ../img/gmx-2026.0-stmv-lumi-cpu.svg
+[4]: ../img/gmx-2026.1-stmv-roihu-cpu.svg
+[5]: ../img/gmx-2026.1-stmv-roihu-gpu.svg
+[6]: ../img/gmx-2026.1-stmv-lumi-cpu.svg
+[7]: ../img/gmx-2026.1-stmv-lumi-gpu.svg
