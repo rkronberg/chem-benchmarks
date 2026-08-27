@@ -5,11 +5,11 @@
 *.restart
 *.ener
 *core*
-mdcrd
-mdinfo
-mdout.GPU
-restrt
-logfile
+mdcrd*
+mdinfo*
+mdout*
+restrt*
+logfile*
 select_gpu*
 out-*
 CRASH
