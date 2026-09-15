@@ -13,3 +13,4 @@ logfile*
 select_gpu*
 out-*
 CRASH
+__pycache__
