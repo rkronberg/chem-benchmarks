@@ -14,3 +14,4 @@ select_gpu*
 out-*
 CRASH
 __pycache__
+*FFTW*
