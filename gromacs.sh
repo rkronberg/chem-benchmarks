@@ -13,7 +13,7 @@ if [[ $SLURM_GPUS_ON_NODE -gt 0 ]]; then
     fi
     if [[ $SLURM_NTASKS -gt 1 ]]; then
         if $SCRIPT -version | grep -Eiq "cufftmp|heffte"; then
-            ARGS="$ARGS -npme $((2*SLURM_NNODES))"
+            ARGS="$ARGS -npme $SLURM_NNODES"
             export GMX_GPU_PME_DECOMPOSITION=1
             export GMX_PMEONEDD=1
         else
@@ -26,13 +26,9 @@ if [[ $SLURM_GPUS_ON_NODE -gt 0 ]]; then
                 GPU=$(( i % $NGPUS ))
                 GPUTASKS+="$GPU"
             done
-        ARGS="$ARGS -gputasks $GPUTASKS"
+            ARGS="$ARGS -gputasks $GPUTASKS"
         fi
     fi
-fi
-
-if [[ $HOSTNAME == "rc"* ]] || [[ $HOSTNAME == "rg"* ]]; then
-    SRUN_OPTS="$SRUN_OPTS --argos=no"
 fi
 
 (set -x
