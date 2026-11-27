@@ -22,6 +22,4 @@ ARGS="-O -i $1 \
       -r logs/restrt-$SLURM_JOBID \
       -l logs/logfile-$SLURM_JOBID"
 
-(set -x
-srun $SRUN_OPTS $SCRIPT $ARGS
-)
+run srun $SRUN_OPTS $SCRIPT $ARGS

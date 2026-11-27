@@ -19,18 +19,15 @@ if [[ $SLURM_GPUS_ON_NODE -gt 0 ]]; then
         else
             ARGS="$ARGS -npme 1"
         fi
-        if [[ $SLURM_NTASKS -gt $((SLURM_GPUS_ON_NODE * SLURM_NNODES)) ]]; then
+        TASKS_PER_NODE=${SLURM_NTASKS_PER_NODE:-$((SLURM_NTASKS / SLURM_NNODES))}
+        if [[ $HOSTNAME != "nid"* && $TASKS_PER_NODE -gt $SLURM_GPUS_ON_NODE ]]; then
             GPUTASKS=""
-            NGPUS=$((SLURM_GPUS_ON_NODE * SLURM_NNODES))
-            for ((i=0; i<$SLURM_NTASKS; i++)); do
-                GPU=$(( i % $NGPUS ))
-                GPUTASKS+="$GPU"
+            for ((i=0; i<TASKS_PER_NODE; i++)); do
+                GPUTASKS+="$(( i % SLURM_GPUS_ON_NODE ))"
             done
             ARGS="$ARGS -gputasks $GPUTASKS"
         fi
     fi
 fi
 
-(set -x
-srun $SRUN_OPTS $SCRIPT $ARGS
-)
+run srun $SRUN_OPTS $SCRIPT $ARGS
