@@ -10,12 +10,17 @@ run() {
     local env_diff
     env_diff=$(diff <(echo "$ENV_BEFORE") <(export -p) | grep -v ' declare -x _=')
 
-    JOB_SETUP=$(
+    {
+        sed '/^source slurm\/common\.sh/,$d' "$0"
+        echo
+
         echo "module reset"
         if [[ $HOSTNAME == "nid"* ]]; then
             echo "module use /appl/local/csc/modulefiles"
         fi
         echo "module load" $(module -t list 2>&1 | grep -v ':$')
+        echo
+
         echo "$env_diff" | sed -n 's/^> declare -x /export /p'
         for name in $(echo "$env_diff" | sed -n 's/^< declare -x \([^=]*\).*/\1/p'); do
             [[ -v $name ]] || echo "unset $name"
@@ -23,11 +28,12 @@ run() {
         if [[ $(ulimit -s) != "$STACK_BEFORE" ]]; then
             echo "ulimit -s $(ulimit -s)"
         fi
+        echo
+
         echo "${*//$SLURM_JOBID/\$SLURM_JOBID}"
-    ) awk '
-        /^source slurm\/common\.sh/ { print ENVIRON["JOB_SETUP"]; next }
-        { print }
-    ' "$0" > "jobscripts/$SLURM_JOBID.sh"
+
+        sed '1,/^source slurm\/common\.sh/d' "$0"
+    } | cat -s > "jobscripts/$SLURM_JOBID.sh"
 
     (set -x
     "$@"
