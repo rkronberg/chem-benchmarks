@@ -3,38 +3,32 @@ module list
 WRAPPER=$1
 shift
 
-JOBFILE="jobscripts/$SLURM_JOBID.sh"
-
-MODULE_USE=""
-if [[ $HOSTNAME == "nid"* ]]; then
-    MODULE_USE="module use /appl/local/csc/modulefiles"
-fi
-
-{
-    MODULE_USE="$MODULE_USE" \
-    MODULES="$(echo $(module -t list 2>&1 | grep -v ':$'))" \
-    JOB_ARGS="$(printf '%q ' "$WRAPPER" "$@")" \
-    awk '
-        /^# ==== / { exit }
-        /^# >>> saved environment/ { skip = 1 }
-        skip { if (/^# <<< saved environment/) skip = 0; next }
-        /^source slurm\/common\.sh/ {
-            print "# >>> saved environment"
-            print "module reset"
-            if (ENVIRON["MODULE_USE"] != "") print ENVIRON["MODULE_USE"]
-            print "module load " ENVIRON["MODULES"]
-            print "set -- " ENVIRON["JOB_ARGS"]
-            print "# <<< saved environment"
-        }
-        { print }
-    ' "$0"
-    echo "# ==== $WRAPPER ===="
-    sed 's/^/# /' "$WRAPPER"
-    echo "# ==== executed commands ===="
-} > "$JOBFILE"
+ENV_BEFORE=$(export -p)
+STACK_BEFORE=$(ulimit -s)
 
 run() {
-    echo "# $*" >> "$JOBFILE"
+    local env_diff
+    env_diff=$(diff <(echo "$ENV_BEFORE") <(export -p) | grep -v ' declare -x _=')
+
+    JOB_SETUP=$(
+        echo "module reset"
+        if [[ $HOSTNAME == "nid"* ]]; then
+            echo "module use /appl/local/csc/modulefiles"
+        fi
+        echo "module load" $(module -t list 2>&1 | grep -v ':$')
+        echo "$env_diff" | sed -n 's/^> declare -x /export /p'
+        for name in $(echo "$env_diff" | sed -n 's/^< declare -x \([^=]*\).*/\1/p'); do
+            [[ -v $name ]] || echo "unset $name"
+        done
+        if [[ $(ulimit -s) != "$STACK_BEFORE" ]]; then
+            echo "ulimit -s $(ulimit -s)"
+        fi
+        echo "${*//$SLURM_JOBID/\$SLURM_JOBID}"
+    ) awk '
+        /^source slurm\/common\.sh/ { print ENVIRON["JOB_SETUP"]; next }
+        { print }
+    ' "$0" > "jobscripts/$SLURM_JOBID.sh"
+
     (set -x
     "$@"
     )

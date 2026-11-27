@@ -10,7 +10,7 @@ mdinfo*
 mdout*
 restrt*
 logfile*
-select_gpu*
+select_gpu_*
 out-*
 CRASH
 __pycache__

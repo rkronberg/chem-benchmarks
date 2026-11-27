@@ -1,14 +1,3 @@
-SELECT_GPU="select_gpu_$SLURM_JOBID"
-
-cat << EOF > $SELECT_GPU
-#!/bin/bash
-
-export ROCR_VISIBLE_DEVICES=\$((SLURM_LOCALID%SLURM_GPUS_PER_NODE))
-exec "\$@"
-EOF
-
-chmod +x ./$SELECT_GPU
-
 CPU_BIND="mask_cpu:fe000000000000,fe00000000000000,fe0000,fe000000,fe,fe00,fe00000000,fe0000000000"
 
-SRUN_OPTS="--cpu-bind=$CPU_BIND ./$SELECT_GPU"
+SRUN_OPTS="--cpu-bind=$CPU_BIND ./slurm/select_gpu.sh"
