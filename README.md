@@ -1,7 +1,7 @@
 # Chemistry benchmarks
 
 Input files and batch scripts for benchmarking selected chemistry software on
-CSC's supercomputers (Puhti, Mahti, Roihu, LUMI).
+CSC's supercomputers (Roihu, LUMI).
 
 > Setup inspired by <https://github.com/mvsjober/ml-benchmarks>.
 
@@ -16,16 +16,15 @@ Select a benchmark and Slurm settings of your choice in accordance
 with the system you're running on. The general syntax is:
 
 ```bash
-sbatch slurm/<template> <software script> benchmark/<software>/<input>
+sbatch slurm/<template> <software script> benchmarks/<software>/<input>
 ```
 
-For example, the GROMACS ADH benchmark could be run on Puhti using 40 cores
+For example, the GROMACS ADH benchmark could be run on Roihu using 384 cores
 with one thread per MPI rank as follows:
 
 ```bash
-module purge
-module load gcc/14.2.0 openmpi/5.0.6 gromacs/2025.4
-sbatch slurm/puhti-mpi40-omp1.sh gromacs.sh benchmarks/gromacs/adh.tpr
+module load gcc/15.2.0 openmpi/5.0.8 gromacs/2026.1
+sbatch slurm/roihu-mpi384-omp1.sh gromacs.sh benchmarks/gromacs/adh.tpr
 ```
 
 On LUMI, also add CSC's module stack to your `MODULEPATH`. For example:
@@ -39,14 +38,14 @@ sbatch slurm/lumi-mpi8-omp7-gcd8.sh gromacs.sh benchmarks/gromacs/stmv.tpr
 > [!IMPORTANT]
 > Remember to load all required environment modules before running `sbatch`.
 
+Each job saves the job script it actually ran, including the loaded modules
+and the full `srun` command, to `jobscripts/<jobid>.sh`. It can be resubmitted
+as is with `sbatch jobscripts/<jobid>.sh`.
+
 ## Systems overview
 
 | System | Partition | Nodes | CPU compute          | Cores per node | GPU compute | GPUs per node |
 |:------:|:---------:|:-----:|:--------------------:|:--------------:|:-----------:|:-------------:|
-| Puhti  | CPU       | 682   | Intel Xeon Gold 6230 | 2 x 20         | -           | -             |
-|        | GPU       | 80    | Intel Xeon Gold 6230 | 2 x 20         | Nvidia V100 | 4             |
-| Mahti  | CPU       | 1404  | AMD EPYC Rome 7H12   | 2 x 64         | -           | -             |
-|        | GPU       | 24    | AMD EPYC Rome 7H12   | 2 x 64         | Nvidia A100 | 4             |
 | Roihu  | CPU       | 486   | AMD EPYC Turin 9965  | 2 x 192        | -           | -             |
 |        | GPU       | 132   | Nvidia Grace         | 4 x 72         | Nvidia H100 | 4             |
 | LUMI   | CPU       | 2048  | AMD EPYC Milan 7763  | 2 x 64         | -           | -             |

@@ -10,8 +10,6 @@
 
 export OMP_NUM_THREADS=36
 
-env | grep SLURM
-
 nvidia-cuda-mps-control -d
 
 cd $SLURM_SUBMIT_DIR

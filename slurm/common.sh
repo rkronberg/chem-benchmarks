@@ -7,9 +7,8 @@ ENV_BEFORE=$(export -p)
 STACK_BEFORE=$(ulimit -s)
 
 run() {
-    local env_diff modules
+    local env_diff
     env_diff=$(diff <(echo "$ENV_BEFORE") <(export -p) | grep -v ' declare -x _=')
-    modules=$(module -t list 2>&1 | grep -v ':$' | grep -vxF -f <(module reset &>/dev/null; module -t list 2>&1))
 
     {
         sed '/^source slurm\/common\.sh/,$d' "$0"
@@ -19,9 +18,7 @@ run() {
         if [[ $HOSTNAME == "nid"* ]]; then
             echo "module use /appl/local/csc/modulefiles"
         fi
-        if [[ -n $modules ]]; then
-            echo "module load" $modules
-        fi
+        echo "module load" $(module -t list 2>&1 | grep -v ':$')
         echo
 
         echo "$env_diff" | sed -n 's/^> declare -x /export /p'
